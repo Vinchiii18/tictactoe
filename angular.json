@@ -34,9 +34,13 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/@nebular/theme/styles/_globals.scss",
+              "node_modules/@nebular/theme/styles/_themes.scss",
               "src/styles.scss"
             ],
             "scripts": [],
@@ -60,7 +64,8 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "serviceWorker": "ngsw-config.json"
             },
             "development": {
               "optimization": false,
@@ -99,12 +104,21 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/myapp",
+            "netlifyToken": "nfp_XMVRkZuDZ2UAPCVJYn3uQ9CmhJKhbmhwec74",
+            "siteId": "9ad52bcc-752c-4fef-a4fd-79413ad01974"
           }
         }
       }
